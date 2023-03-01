@@ -1,0 +1,46 @@
+---
+title: "Heights"
+author: "Jessie Black"
+date: "2023-03-01"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Galton Families Data
+
+The GaltonFamilies data set is a data frame with 934 observations across 205 families with the following 8 observations:
+
+- family (ID)
+- father's height in inches
+- mother's height in inches
+- calculated "midparentHeight", or (father + 1.08*mother)/2
+- the number of children in the family
+- ordinal number for the current child (listed in decreasing order of height for boys and then girls)
+- child's gender as a factor
+- child's height in inches
+
+The data is available from the package "HistData", and the data source is Galton's notebook, http://www.medicine.mcgill.ca/epidemiology/hanley/galton/notebook/, transcribed by Beverley Shipley in 2001.
+
+```{r libraries}
+library(tidyverse)
+library(HistData)
+```
+
+```{r galton}
+data("GaltonFamilies")
+set.seed(1983)# for comparing to HarvardX Data Science course lectures
+summary(GaltonFamilies)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
